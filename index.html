@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assingnment-5</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +16,9 @@
 <body  class="bg-[#F4F7FF] px-32 pt-7" >
 
     <header>
-        
+        <!-- nav styles -->
          <section class="bg-[#FFFFFF] rounded-2xl p-6 flex justify-between ">
-            <!-- nav styles -->
+            
             
             <section>
                 <!-- logo styles -->
@@ -36,6 +38,74 @@
              </div>
 
             </section>
+         </section>
+
+         <!-- grid section -->
+
+         <section class="flex">
+            <!-- grid section 1st div -->
+           <div>
+            <section class=" pt-3">
+                <!-- div for col-3 -->
+                <div class=" bg-[#FFFFFF]">
+    
+                    <!-- nav div section -->
+                    <section class="grid grid-cols-8">
+                        <!--  task div -->
+                        <div class="mt-8 ml-1 mr-5 mb-5 flex bg-[#F4F7FF] rounded-lg col-span-2">
+                            <img class="w-9 h-9 mt-7 ml-6" src="assets/checkbox.png" alt="">
+                            <div class="">
+                                <h3 class="font-medium text-base m-4">Task Assigned  <br><span class="font-bold text-3xl">05</span></h3>
+    
+                            </div>
+                       </div>
+    
+                        <!-- task div 2nd item -->
+                        <div class="col-span-4 flex bg-[linear-gradient(153deg,_rgba(55,82,253,1)_53%,_rgba(155,168,248,1)_100%)] mb-5 mt-8 ml-6 rounded-lg">
+                            <img class="w-11 h-14 ml-10 mr-4 mt-4" src="assets/board.png" alt="">
+                         <h2 class="font-medium text-2xl text-cyan-50 mt-3">Discover Something <br> New Today!</h2>
+                         </div>
+    
+                         <!-- task div 3rd item -->
+    
+                         <div class="mt-8 ml-6 mr-5 mb-5 flex bg-[#F4F7FF] rounded-lg col-span-2">
+                            <img class="w-9 h-9 mt-7 ml-6" src="assets/calender.png" alt="">
+                            <div class="">
+                                <h3 class="font-medium text-base m-4">Wed <br><span class="font-bold text-xl">
+                                   , Jul 28 2025 </span></h3>
+    
+                            </div>
+                       </div>
+    
+    
+                    </section>
+    
+    
+                </div>
+    
+             <!-- div for col-1 -->
+                
+             </section>
+
+           </div>
+<!-- -------------grid section 2nd div ---------------- -->
+           <div class="w-80 min-h-96">
+            <div class="col-span-1 bg-[#FFFFFF] ml-7 mt-3 rounded-xl">
+                <div class="flex justify-center pt-3 ">
+                    <img class="" src="assets/activity.png" alt="">
+                <h1 class="pl-4">Activity Log</h1>
+                </div>
+    
+                    <div class="ml-20">
+                        <button class="bg-blue-400 pl-4 pr-4 pt-2 pb-2 rounded-xl mt-4 font-medium text-xs text-white ">Clear History</button>
+                    </div>
+                
+
+
+
+            </div>
+
+           </div>
          </section>
 
     </header>
