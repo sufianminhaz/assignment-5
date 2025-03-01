@@ -3,125 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assingnment-5</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>DevBoard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
-
-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
 </head>
-<body  class="bg-[#F4F7FF] px-32 pt-7" >
-
-    <header>
-        <!-- nav styles -->
-         <section class="bg-[#FFFFFF] rounded-2xl p-6 flex justify-between ">
-            
-            
-            <section>
-                <!-- logo styles -->
-                 <div class="flex">
-                    <img src="assets/logo.png" alt="">
-                    <h2 class="text-3xl font-light">Dev <span class="font-bold text-3xl">Board</span></h2>
-                 </div>
-
-            </section>
-
-            <section>
-            <!-- btn styles -->
-             <div class="flex">
-                <button class="bg-[#F4F7FF] rounded-md"><img src="assets/checkbox.png" alt=""></button>
-             <h2 class="font-bold text-3xl pl-1 rounded-md bg-[#F4F7FF]">25</h2>
-             <button class="pl-6"><img src="assets/theme-btn.png" alt=""></button>
-             </div>
-
-            </section>
-         </section>
-
-         <!-- grid section -->
-
-         <section class="flex">
-            <!-- grid section 1st div -->
-           <div>
-            <section class=" pt-3">
-                <!-- div for col-3 -->
-                <div class=" bg-[#FFFFFF]">
+<body class="bg-[#F4F7FF] p-8 flex flex-col items-center">
     
-                    <!-- nav div section -->
-                    <section class="grid grid-cols-8">
-                        <!--  task div -->
-                        <div class="mt-8 ml-1 mr-5 mb-5 flex bg-[#F4F7FF] rounded-lg col-span-2">
-                            <img class="w-9 h-9 mt-7 ml-6" src="assets/checkbox.png" alt="">
-                            <div class="">
-                                <h3 class="font-medium text-base m-4">Task Assigned  <br><span class="font-bold text-3xl">05</span></h3>
+    <!-- Header Section -->
+    <header class="w-full max-w-7xl flex justify-between items-center bg-[#FFFFFF] p-4 rounded-xl">
+        
+        <div class="flex">
+            <img src="assets/logo.png" alt="">
+            <h1 class="text-2xl font-light mt-4 ">Dev<span class="text-black font-bold">Board</span></h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 bg-blue-100 p-2 rounded-lg">
+                <input type="checkbox" checked class="checkbox checkbox-primary" />
+                <span class="text-lg font-semibold">23</span>
+            </div>
+            <div class="relative w-12 h-12 rounded-full bg-[#F4F7FF] flex items-center justify-center">
+                <img src="assets/theme-btn.png" alt="Logo" class="w-10 h-10">
+            </div>
+    </header>
     
-                            </div>
-                       </div>
-    
-                        <!-- task div 2nd item -->
-                        <div class="col-span-4 flex bg-[linear-gradient(153deg,_rgba(55,82,253,1)_53%,_rgba(155,168,248,1)_100%)] mb-5 mt-8 ml-6 rounded-lg">
-                            <img class="w-11 h-14 ml-10 mr-4 mt-4" src="assets/board.png" alt="">
-                         <h2 class="font-medium text-2xl text-cyan-50 mt-3">Discover Something <br> New Today!</h2>
-                         </div>
-    
-                         <!-- task div 3rd item -->
-    
-                         <div class="mt-8 ml-6 mr-5 mb-5 flex bg-[#F4F7FF] rounded-lg col-span-2">
-                            <img class="w-9 h-9 mt-7 ml-6" src="assets/calender.png" alt="">
-                            <div class="">
-                                <h3 class="font-medium text-base m-4">Wed <br><span class="font-bold text-xl">
-                                   , Jul 28 2025 </span></h3>
-    
-                            </div>
-                       </div>
-    
-    
-                    </section>
-    
-    
-                </div>
-    
-             <!-- div for col-1 -->
-                
-             </section>
-
+    <!-- Main Content -->
+    <main class="w-full max-w-7xl mt-6 grid grid-cols-3 gap-6 bg-[#FFFFFF]">
+        <!-- Task Info -->
+        <div class="col-span-3 flex items-center justify-between bg-[#fcfcff] p-4 rounded-xl ">
+            <div class="flex items-center gap-2 bg-[#F4F7FF] w-64 h-24 rounded-lg">
+                <input type="checkbox" checked class="checkbox checkbox-primary mt-2 ml-8" />
+                <span class="text-lg font-semibold mt-2 ml-2"><span class="font-light text-sm">Task Assigned</span> <br> 05</span>
+            </div>
+            <!-- blue div -->
+           <div class="flex bg-blue-600 w-2/5 rounded-md">
+            <img class="w-16 h-16 ml-10 mt-3" src="assets/board.png" alt="">
+            <button class="font-medium text-xl m-4 ml-10 text-white">Discover Something <br> New Today!</button>
            </div>
-<!-- -------------grid section 2nd div ---------------- -->
-           <div class="w-80 min-h-96">
-            <div class="col-span-1 bg-[#FFFFFF] ml-7 mt-3 rounded-xl">
-                <div class="flex justify-center pt-3 ">
-                    <img class="" src="assets/activity.png" alt="">
-                <h1 class="pl-4">Activity Log</h1>
+           <!-- date div -->
+            <div class="flex mr-7 bg-[#F4F7FF] w-64 h-24 rounded-lg">
+                <img class="w-7 h-7 mr-5 mt-2 ml-6 mt-7" src="assets/calender.png" alt="">
+                <h2 class="text-lg font-semibold ml-3 mt-4"><span class="font-light text-sm">Wed</span> , <br> Jul 28 2025</h2>
+            </div>
+        </div>
+        
+        <!-- Task Cards -->
+        <div class="col-span-2 grid grid-cols-3 gap-6 ml-1">
+            <!-- =======1st card====== -->
+            <div class="card bg-[#F4F7FF]  p-4 rounded-xl ">
+                <h3 class="text-xs font-light w-24 mb-1 bg-[#FFFFFF] rounded-lg  pl-5 p-2">ShopEase</h3>
+                <p class="font-bold text-lg mt-1 mb-1">Fix Mobile Button Issue</p>
+                <p class="text-gray-600 text-sm bg-[#FFFFFF] w-full h-24 mt-3 rounded-lg pl-3 pt-5">Debug using Chrome DevTools br check for over lappi...</p>
+                <!-- btn 1st card -->
+                <div class="flex mt-5 ">
+                    <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
+                <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
-    
-                    <div class="ml-20">
-                        <button class="bg-blue-400 pl-4 pr-4 pt-2 pb-2 rounded-xl mt-4 font-medium text-xs text-white ">Clear History</button>
-                    </div>
-                
+            </div>
+            <!-- 2nd card -->
+            
+             <div class="card bg-[#F4F7FF]  p-4 rounded-xl ">
+                <h3 class="text-xs font-light w-24 mb-1 bg-[#FFFFFF] rounded-lg  pl-5 p-2">CloudSync</h3>
+                <p class="font-bold text-lg mt-1 mb-1">Add Dark Mode</p>
+                <p class="text-gray-600 text-sm bg-[#FFFFFF] w-full h-24 mt-3 rounded-lg pl-3 pt-5">Store the user's preference in localStorage, update CSS variables dynamically....</p>
+                <!-- btn 2nd card -->
+                <div class="flex mt-5 ">
+                    <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
+                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                </div>
+            </div>
+            
+            <!-- 3rd card -->
+             
+            <div class="card bg-[#F4F7FF]  p-4 rounded-xl ">
+                <h3 class="text-xs font-light w-24 mb-1 bg-[#FFFFFF] rounded-lg  pl-5 p-2">SwiftPay</h3>
+                <p class="font-bold text-lg mt-1 mb-1">Optimize  Home page </p>
+                <p class="text-gray-600 text-sm bg-[#FFFFFF] w-full h-24 mt-3 rounded-lg pl-3 pt-5">Debug using Chrome DevTools, check for overlapping elements....</p>
+                <!-- btn 3rd card -->
+                <div class="flex mt-5 ">
+                    <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
+                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                </div>
+            </div>
+            
+           <!-- ===4th card== -->
 
-
-
+            
+            <div class="card bg-[#F4F7FF]  p-4 rounded-xl ">
+                <h3 class="text-xs font-light w-24 mb-1 bg-[#FFFFFF] rounded-lg  pl-5 p-2">Meta</h3>
+                <p class="font-bold text-lg mt-1 mb-1">Add new emoji 🤲</p>
+                <p class="text-gray-600 text-sm bg-[#FFFFFF] w-full h-24 mt-3 rounded-lg pl-3 pt-5">Debug using Chrome DevTools, check for overlapping elements.....</p>
+                <!-- btn 4th card -->
+                <div class="flex mt-5 ">
+                    <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
+                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                </div>
             </div>
 
-           </div>
-         </section>
+            <!-- 5th card -->
+             
+             <div class="card bg-[#F4F7FF]  p-4 rounded-xl ">
+                <h3 class="text-xs font-light w-24 mb-1 bg-[#FFFFFF] rounded-lg  pl-5 p-2">Google LLC</h3>
+                <p class="font-bold text-lg mt-1 mb-1">Integrate OpenAI API </p>
+                <p class="text-gray-600 text-sm bg-[#FFFFFF] w-full h-24 mt-3 rounded-lg pl-3 pt-5">Debug using Chrome DevTools br check for over lappi...</p>
+                <!-- btn 5st card -->
+                <div class="flex mt-5 ">
+                    <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
+                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                </div>
+            </div>
 
-    </header>
-
-    <body>
+            <!-- 6th card -->
+              
+            <div class="card bg-[#F4F7FF]  p-4 rounded-xl ">
+                <h3 class="text-xs font-light w-24 mb-1 bg-[#FFFFFF] rounded-lg  pl-5 p-2">Glassdoar</h3>
+                <p class="font-bold text-lg mt-1 mb-1">Improve Job searching </p>
+                <p class="text-gray-600 text-sm bg-[#FFFFFF] w-full h-24 mt-3 rounded-lg pl-3 pt-5">Debug using Chrome DevTools br check for over lappi...</p>
+                <!-- btn 6st card -->
+                <div class="flex mt-5 ">
+                    <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
+                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                </div>
+            </div>
+            
+        </div>
         
-
-    </body>
-
-    <footer>
-
-    </footer>
-
+        <!-- Activity Log -->
+        <div class="col-span-1 border border-blue-300 p-4 rounded-xl bg-white shadow-md h-full flex flex-col">
+            <div class="flex justify-center">
+                <img src="assets/activity.png" alt="">
+                <h2 class="text-lg font-medium ml-4">Activity Log</h2>
+            </div>
+            <button class="btn btn-primary w-36 h-2 text-white font-medium text-xs ml-28 mt-3 justify-center">Clear History</button>
+            <div class="mt-4 text-sm text-gray-600 flex-grow overflow-auto">
+                <p>You have Completed the Task: Add Dark Mode at 12:48:15 PM</p>
+                <p>You have Completed the Task: Add Dark Mode at 12:48:15 PM</p>
+            </div>
+        </div>
+    </main>
     
 </body>
 </html>
+
+
 
 
 
