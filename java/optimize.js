@@ -1,13 +1,4 @@
-document.getElementById('disco-btn').addEventListener('click',function(event){
-    event.preventDefault();
-    window.location.href="ans.html"
-
-})
-
-
-
-
-function completeTask() {
+function optimizeTask() {
     // Step 1: Increase the number by 1
     let countElement = document.getElementById("nav-btn");
     let currentCount = parseInt(countElement.innerText);
@@ -19,7 +10,7 @@ function completeTask() {
     assignedElement.innerText = assignedCount - 1;
 
     // Step 3: Change button appearance (optional)
-    let btn = document.getElementById("fix-btn");
+    let btn = document.getElementById("optimize-btn");
     btn.innerText = "Completed";
     btn.style.backgroundColor = "#A5B4FC";
     btn.style.border = "none";
@@ -31,7 +22,7 @@ const now = new Date();
     const timeString = now.toLocaleTimeString(); 
 
 p.innerText = `You have Completed the 
-Task: Fix Mobile Button Issue at ${timeString}
+Task: Optimize Home page  at ${timeString}
 
 
 `

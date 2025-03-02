@@ -23,7 +23,7 @@
         <div class="flex items-center gap-4">
             <div class="flex items-center gap-2 bg-blue-100 p-2 rounded-lg">
                 <input type="checkbox" checked class="checkbox checkbox-primary" />
-                <span class="text-lg font-semibold">23</span>
+                <span id="nav-btn" class="text-lg font-semibold">23</span>
             </div>
             <div class="relative w-12 h-12 rounded-full bg-[#F4F7FF] flex items-center justify-center">
                 <img src="assets/theme-btn.png" alt="Logo" class="w-10 h-10">
@@ -36,16 +36,16 @@
         <div class="col-span-3 flex items-center justify-between bg-[#fcfcff] p-4 rounded-xl ">
             <div class="flex items-center gap-2 bg-[#F4F7FF] w-64 h-24 rounded-lg">
                 <input type="checkbox" checked class="checkbox checkbox-primary mt-2 ml-8" />
-                <span class="text-lg font-semibold mt-2 ml-2"><span class="font-light text-sm">Task Assigned</span> <br> 05</span>
+                <span class="text-lg font-semibold mt-2 ml-2"><span class="font-light text-sm">Task Assigned</span> <br> <span id="task">05</span></span>
             </div>
             <!-- blue div -->
            <div class="flex bg-blue-600 w-2/5 rounded-md">
             <img class="w-16 h-16 ml-10 mt-3" src="assets/board.png" alt="">
-            <button class="font-medium text-xl m-4 ml-10 text-white">Discover Something <br> New Today!</button>
+            <button id="disco-btn" class="font-medium text-xl m-4 ml-10 text-white">Discover Something <br> New Today!</button>
            </div>
            <!-- date div -->
             <div class="flex mr-7 bg-[#F4F7FF] w-64 h-24 rounded-lg">
-                <img class="w-7 h-7 mr-5 mt-2 ml-6 mt-7" src="assets/calender.png" alt="">
+                <img class="w-7 h-7 mr-5  ml-6 mt-7" src="assets/calender.png" alt="">
                 <h2 class="text-lg font-semibold ml-3 mt-4"><span class="font-light text-sm">Wed</span> , <br> Jul 28 2025</h2>
             </div>
         </div>
@@ -60,7 +60,7 @@
                 <!-- btn 1st card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                <button id="fix-btn" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3   " onclick="completeTask()">Completed</button>
                 </div>
             </div>
             <!-- 2nd card -->
@@ -72,7 +72,7 @@
                 <!-- btn 2nd card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                    <button id="add-btn" onclick="addFunction()" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
             </div>
             
@@ -85,7 +85,7 @@
                 <!-- btn 3rd card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                    <button id="optimize-btn" onclick="optimizeTask()" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
             </div>
             
@@ -99,7 +99,7 @@
                 <!-- btn 4th card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                    <button id="addnew-btn" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
             </div>
 
@@ -112,7 +112,7 @@
                 <!-- btn 5st card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                    <button id="integrate-btn" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
             </div>
 
@@ -125,7 +125,7 @@
                 <!-- btn 6st card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                    <button class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                    <button id="improve-btn" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
             </div>
             
@@ -138,12 +138,16 @@
                 <h2 class="text-lg font-medium ml-4">Activity Log</h2>
             </div>
             <button class="btn btn-primary w-36 h-2 text-white font-medium text-xs ml-28 mt-3 justify-center">Clear History</button>
-            <div class="mt-4 text-sm text-gray-600 flex-grow overflow-auto">
-                <p>You have Completed the Task: Add Dark Mode at 12:48:15 PM</p>
-                <p>You have Completed the Task: Add Dark Mode at 12:48:15 PM</p>
+            <div id="activity-container" class="mt-4 text-sm text-gray-600 flex-grow overflow-auto">
+
+                
             </div>
         </div>
     </main>
+
+    <script src="java/qstn.js"></script>
+    <script src="java/add.js"></script>
+    <script src="java/optimize.js"></script>
     
 </body>
 </html>
