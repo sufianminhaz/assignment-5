@@ -11,7 +11,7 @@
         body { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
-<body class="bg-[#F4F7FF] p-8 flex flex-col items-center">
+<body id="body" class="bg-[#F4F7FF] p-8 flex flex-col items-center">
     
     <!-- Header Section -->
     <header class="w-full max-w-7xl flex justify-between items-center bg-[#FFFFFF] p-4 rounded-xl">
@@ -26,17 +26,20 @@
                 <span id="nav-btn" class="text-lg font-semibold">23</span>
             </div>
             <div class="relative w-12 h-12 rounded-full bg-[#F4F7FF] flex items-center justify-center">
-                <img src="assets/theme-btn.png" alt="Logo" class="w-10 h-10">
+                <button id="color-btn" onclick="makeColor()">
+                    <img src="assets/theme-btn.png" alt="Logo" class="w-10 h-10 pointer-events-none">
+                </button>
+                
             </div>
     </header>
     
     <!-- Main Content -->
-    <main class="w-full max-w-7xl mt-6 grid grid-cols-3 gap-6 bg-[#FFFFFF]">
+    <main class="w-full max-w-7xl mt-6 grid grid-cols-3 gap-6  bg-[#FFFFFF]">
         <!-- Task Info -->
         <div class="col-span-3 flex items-center justify-between bg-[#fcfcff] p-4 rounded-xl ">
             <div class="flex items-center gap-2 bg-[#F4F7FF] w-64 h-24 rounded-lg">
                 <input type="checkbox" checked class="checkbox checkbox-primary mt-2 ml-8" />
-                <span class="text-lg font-semibold mt-2 ml-2"><span class="font-light text-sm">Task Assigned</span> <br> <span id="task">05</span></span>
+                <span class="text-lg font-semibold mt-2 ml-2"><span class="font-light text-sm">Task Assigned</span> <br> <span id="task">06</span></span>
             </div>
             <!-- blue div -->
            <div class="flex bg-blue-600 w-2/5 rounded-md">
@@ -46,12 +49,13 @@
            <!-- date div -->
             <div class="flex mr-7 bg-[#F4F7FF] w-64 h-24 rounded-lg">
                 <img class="w-7 h-7 mr-5  ml-6 mt-7" src="assets/calender.png" alt="">
-                <h2 class="text-lg font-semibold ml-3 mt-4"><span class="font-light text-sm">Wed</span> , <br> Jul 28 2025</h2>
+                <h2 class="text-lg font-semibold ml-3 mt-4"><span class="font-light text-sm">Sun</span> , <br> March 02 2025</h2>
             </div>
         </div>
+
         
         <!-- Task Cards -->
-        <div class="col-span-2 grid grid-cols-3 gap-6 ml-1">
+        <div class="col-span-2 grid grid-cols-3 gap-6 ml-1 mb-4">
             <!-- =======1st card====== -->
             <div class="card bg-[#F4F7FF]  p-4 rounded-xl ">
                 <h3 class="text-xs font-light w-24 mb-1 bg-[#FFFFFF] rounded-lg  pl-5 p-2">ShopEase</h3>
@@ -99,7 +103,7 @@
                 <!-- btn 4th card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                    <button id="addnew-btn" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                    <button id="addnew-btn" onclick="addNewTask()" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
             </div>
 
@@ -112,7 +116,7 @@
                 <!-- btn 5st card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                    <button id="integrate-btn" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                    <button id="integrate-btn" onclick="integrateTask()" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
             </div>
 
@@ -125,19 +129,19 @@
                 <!-- btn 6st card -->
                 <div class="flex mt-5 ">
                     <p class=" text-base mt-2"><span class="text-xs font-light">Deadline</span> <br> 21 March 2025</p>
-                    <button id="improve-btn" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
+                    <button id="improve-btn" onclick="improveTask()" class="btn btn-primary w-24 h-2 text-white font-medium text-xs ml-5 mt-3">Completed</button>
                 </div>
             </div>
             
         </div>
         
         <!-- Activity Log -->
-        <div class="col-span-1 border border-blue-300 p-4 rounded-xl bg-white shadow-md h-full flex flex-col">
+        <div id="activity" class=" col-span-1 mb-4 mr-4 gap-6 p-4 rounded-xl bg-[#F4F7FF] shadow-md  flex flex-col">
             <div class="flex justify-center">
-                <img src="assets/activity.png" alt="">
+                <img class="w-6 h-6" src="assets/activity.png" alt="">
                 <h2 class="text-lg font-medium ml-4">Activity Log</h2>
             </div>
-            <button class="btn btn-primary w-36 h-2 text-white font-medium text-xs ml-28 mt-3 justify-center">Clear History</button>
+            <button id="clear-btn" class="btn btn-primary w-36 h-2 text-white font-medium text-xs ml-28 mt-3 justify-center">Clear History</button>
             <div id="activity-container" class="mt-4 text-sm text-gray-600 flex-grow overflow-auto">
 
                 
@@ -148,6 +152,11 @@
     <script src="java/qstn.js"></script>
     <script src="java/add.js"></script>
     <script src="java/optimize.js"></script>
+    <script src="java/addnew.js"></script>
+    <script src="java/integrate.js"></script>
+    <script src="java/improve.js"></script>
+    <script src="java/clear.js"></script>
+    <script src="java/colour.js"></script>
     
 </body>
 </html>
